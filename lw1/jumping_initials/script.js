@@ -3,37 +3,32 @@ import Gliff from './domain/gliff.js';
 const textParts = ['Г', 'Д', 'А'];
 
 var canvasContext;
+const gliff = new Gliff('Г', 100, 100);
 
 main();
 
-function main()
-{
+function main() {
     init();
 
-    var gliff = new Gliff('Г');
-    gliff.Draw(canvasContext);
+    window.requestAnimationFrame(draw);
 }
 
-function init()
-{
+function draw() {
+    canvasContext.clearRect(0, 0, document.documentElement.clientWidth, document.documentElement.clientHeight);
+    gliff.Draw(canvasContext);
+
+    window.requestAnimationFrame(draw);
+}
+
+function init() {
     setupCanvasAndContext();
 }
 
-function setupCanvasAndContext()
-{
+function setupCanvasAndContext() {
     const canvas = document.getElementById('canvas');
     canvas.width = document.documentElement.clientWidth;
     canvas.height = document.documentElement.clientHeight;
 
-    console.log(document.documentElement.clientWidth,
-        document.documentElement.clientHeight);
-
     canvasContext = canvas.getContext('2d');
+    canvasContext.font = '48px serif';
 }
-
-function printWithFormat(text, format)
-{
-    canvasContext.font = `${format.size}px ${format.font}`;
-    canvasContext.fillText(text, format.x, format.y);
-}
-
