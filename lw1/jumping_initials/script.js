@@ -4,7 +4,7 @@ import Canvas from './domain/canvas.js';
 import MoveableShapeAdapter from './domain/moveable.js';
 
 const MIN_Y = 99;
-const MAX_Y = 700;
+const MAX_Y = 500;
 
 var _canvas;
 var _moveables = [];
@@ -14,14 +14,14 @@ main();
 function main() {
     init();
 
-    const moveableGLiteral = buildMoveableGLiteral(4);
-    const moveableDLiteral = buildMoveableDLiteral(2);
-    const moveableALiteral = buildMoveableALiteral(3);
+    const moveableGLiteral = buildMoveableGLiteral(3);
+    const moveableDLiteral = buildMoveableDLiteral(1);
+    const moveableALiteral = buildMoveableALiteral(2);
     _moveables.push(moveableGLiteral, moveableDLiteral, moveableALiteral);
 
     setInterval(() => {
         _canvas.getContext().fillStyle = getRandomColor();
-    }, 300);
+    }, 500);
 
     window.requestAnimationFrame(draw);
 }
