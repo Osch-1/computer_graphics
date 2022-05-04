@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'undertale_battle_font';
+    src: url('/fonts/undertale_battle_font.ttf');
+}
+
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    background-color: lightsalmon;
+    align-items: center;
+}
+
+.main_header
+{
+    font: 60px 'undertale_battle_font';
+}
