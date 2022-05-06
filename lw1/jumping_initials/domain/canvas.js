@@ -1,6 +1,8 @@
 export default class Canvas {
     #context;
 
+    // use transformation instead of changing coordinates
+    // add movement by x coordinate
     constructor(context) {
         this.#context = context;
     }

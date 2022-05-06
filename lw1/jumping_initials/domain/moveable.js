@@ -23,6 +23,7 @@ export default class MoveableShapeAdapter {
         console.log(this);
     }
 
+    //move and change state
     move(canvas) {
         canvas.drawShape(this.#shape);
         this.#changeShapeY();
